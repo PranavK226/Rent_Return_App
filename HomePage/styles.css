@@ -11,6 +11,12 @@ header{
   background-color: #1A5AAC;
 }
 
+button{
+  text-align: left;
+  vertical-align: middle;
+  font-size: 1.5rem;
+}
+
 .navbar {
   display: flex;
   flex-direction: column;
@@ -25,7 +31,7 @@ header{
 #three-col-grid {
   display: grid;
   text-align: center;
-  grid-template-columns: repeat(3, 600px);
+  grid-template-columns: repeat(3, 33%);
   grid-template-rows: repeat(4, 200px);
 }
 
@@ -33,7 +39,7 @@ header{
   vertical-align: middle;
   text-align: center;
   display: grid;
-  grid-template-columns: repeat(2, 900px);
+  grid-template-columns: repeat(2, 50%);
   grid-template-rows: 600px;
 }
 
@@ -48,6 +54,7 @@ h1.cellbig {
   font-size: 2.5em;
   font-family: 'Open Sans', sans-serif;
   text-align: center;
+  vertical-align: middle;
 }
 
 h1.cellsmall {
@@ -55,18 +62,6 @@ h1.cellsmall {
   font-size: 1.75em;
   font-family: 'Open Sans', sans-serif;
   text-align: center;
-}
-
-@media screen and (max-width: 1000px) {
-  #grid-row {
-    grid-template-columns: auto auto; 
-  }
-}
-
-@media screen and (max-width: 600px) {
-  #grid-row {
-    grid-template-columns: 100%;
-  }
 }
 
 h1.WhyRent{
@@ -104,7 +99,7 @@ li{
   padding: 15px 30px;
 }
 
-a{
+a.navbarlinks{
   
   text-align: center;
   color: #ffffff;
@@ -115,6 +110,17 @@ a{
 
 a:hover{
   color:#F28416;
+  transition: 0.5s;
+}
+
+a.search{
+  background: white;
+  color: #1A1A1A;
+  border: #ffffff, 1em;
+}
+
+a.search:hover{
+  color: #F28416;
   transition: 0.5s;
 }
 
@@ -141,6 +147,11 @@ img.WhyRentIcon{
   vertical-align: middle;
 }
 
+img.search{
+  height: 1em;
+  width: 1em;
+}
+
 .logo {
   float: top;
   padding: 10px 0;
@@ -156,5 +167,14 @@ img.WhyRentIcon{
   .navbar {
     flex-direction: row;
     justify-content: space-around;
+  }
+}
+
+@media (max-width: 1000px) {
+  #three-col-grid {
+    grid-template-columns: 100%;
+  }
+  #two-col-grid {
+    grid-template-columns: 100%;
   }
 }
