@@ -1,0 +1,87 @@
+body{
+  margin:0;
+  padding:0;
+  background-color: #1A1A1A;
+  
+}
+
+header{
+  width:100%;
+  height: 70px;
+  background-color: #1A5AAC;
+}
+
+.hero{
+  height:100%;
+  width:100%;
+  background-position: center;
+  background-size: cover;
+  position:absolute;
+}
+
+.login-box{
+  width:400px;
+  height:450px;
+  position: relative;
+  margin: 3% 5%;
+  background:#fff;
+  padding:5px;
+  border-radius: 30px;
+}
+.login-container{
+  width:275px;
+  height:100px;
+  position: relative;
+  margin: 5% 15%;
+  background:rgb(255, 255, 255);
+  padding:5px;
+  border-radius: 30px;
+}
+.login-container2{
+  width:75px;
+  height:50px;
+  position: relative;
+  margin: 1% 40%;
+  background:rgb(255, 255, 255);
+  padding:5px;
+  border-radius: 30px;
+}
+.register-box{
+  width:400px;
+  height:450px;
+  position: relative;
+  margin: 1% 65%;
+  background:#fff;
+  padding:5px;
+  border-radius: 30px;
+}
+.register-container{
+  width:275px;
+  height:120px;
+  position: relative;
+  margin: 5% 15%;
+  background:rgb(255, 255, 255);
+  padding:5px;
+  border-radius: 30px;
+}
+.register-container2{
+  width:75px;
+  height:50px;
+  position: relative;
+  margin: 1% 40%;
+  background:rgb(255, 255, 255);
+  padding:5px;
+  border-radius: 30px;
+}
+
+.logo{
+  height:175px;
+  width:175px;
+  margin-left: 27%;
+}
+
+h1{
+  color:#F28416;
+  margin-left: 35%;
+}
+
