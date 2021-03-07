@@ -15,3 +15,11 @@ span{
   color:#F28416;
 }
 
+.changecolor{
+  color:white;
+}
+
+.changecolor:hover{
+  transition:0.5s;
+  color:#F28416;
+}
