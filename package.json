@@ -1,0 +1,28 @@
+{
+  "name": "rent_return_app",
+  "version": "1.0.0",
+  "description": "We are creating an app to showcase the work we have done in our RentReturn startup.",
+  "main": "server.js",
+  "dependencies": {
+    "angular": "^1.8.2",
+    "angularjs": "^0.0.1",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "build": "node server.js",
+    "build:azure": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PranavK226/Rent_Return_App.git"
+  },
+  "author": "Pranav Kannepali and Arjun Bhat",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PranavK226/Rent_Return_App/issues"
+  },
+  "homepage": "https://github.com/PranavK226/Rent_Return_App#readme"
+}
