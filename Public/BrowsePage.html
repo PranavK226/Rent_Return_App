@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='BrowsePage'>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RentReturn - Browse</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="./BrowsePage.js"></script>
+    <link rel="shortcut icon" type="image/png" href="./HomePageImages/Logo.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="BrowsePageStyles.css">
+</head>
+
+<nav class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3" style="background-color: #1a5aac;">
+    <img class="h5 my-0 me-md-auto fw-normal" style="width:13%; height: auto;"
+        src="./HomePageImages/LogoRentReturn.png" />
+    <nav class="my-2 my-md-0 me-md-3">
+        <a class="btn btn-sm p-2 text-light" style="background-color: #00327C;" href="./index.html">Home</a>
+        <a class="btn btn-sm p-2 text-light" style="background-color: #00327C;" href="./BrowsePage.html">Browse</a>
+        <a class="btn btn-sm p-2 text-light" style="background-color: #00327C;"
+            href="./LoginRegisterPage.html">Login/Register</a>
+        <a class="btn btn-sm p-2 text-light" style="background-color: #00327C;" href="./PricingPage.html">Pricing</a>
+
+    </nav>
+</nav>
+
+<body>
+
+    <div class="row row-cols-1 row-cols-m-2 p-2" ng-controller="BrowsePageController as browsePage">
+        <div class="col-2">
+            <button class="btn text-light mx-auto" type="button" data-bs-toggle="collapse" data-bs-target="#collapsableForm"
+                aria-expanded="false" aria-controls="collapsableForm" style="background-color:#1A5AAC; width: 90%; height:auto">
+                Post Your Object
+            </button>
+            <div class="collapse" id="collapsableForm">
+                <form class="text-light" ng-submit="browsePage.createNewObject()">
+                    <div class="mb-3">
+                        <label for="NameOfObject" class="form-label">What is Your Object?</label>
+                        <input class="form-control" id="NameOfObject" ng-model="browsePage.name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="PriceOfObject" class="form-label">Renting Price (In Dollars)</label>
+                        <input type="number" min="0" class="form-control" id="PriceOfObject" ng-model="browsePage.price" required>
+                    </div>
+                    <label for="SelectTimePeriod" class="form-label">Select Time Period</label>
+                    <select class="form-select mb-3" id="SelectTimePeriod" ng-model="browsePage.timePeriod" required>
+                        <option selected disabled value="">Choose an Option</option>
+                        <option value="Hour">Hour</option>
+                        <option value="Day">Day</option>
+                        <option value="Month">Month</option>
+                        <option value="Year">Year</option>
+                    </select>
+                    <div class="mb-3">
+                        <label for="PriceOfObject" class="form-label">Total Price (In Dollars)</label>
+                        <input type="number" min="0" class="form-control" id="PriceOfObject" ng-model="browsePage.totalPrice" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="ProductDescription" class="form-label">Describe the Object (Briefly)</label>
+                        <textarea type="form-control" id="ProductDescription" ng-model="browsePage.description" style="width: 100%; resize: vertical;" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-10">
+            <div class="row row-cols-1 row-cols-md-3">
+                <div class="col my-2" ng-repeat="object in browsePage.objects">
+                    <div class="card text-left p-2">
+                        <h5 class="card-title">{{object.ObjectName}}</h5>
+                        <p class="card-text">Posted By: {{object.PostedBy}}</p>
+                        <p class="card-text">Price: {{object.Price}}</p>
+                        <p class="card-text">Total Price: {{object.TotalPrice}}</p>
+                        <p class="card-text">{{browsePage.availableOrNot(object.Status)}}</p>
+                        <div class="btn-group">
+                            <a class="btn btn-sm p-10 text-light" style="background-color:#1A5AAC;"
+                                href="./EnlargedCard1.html">RENT</a>
+                            <a class="btn btn-sm p-10 text-light" style="background-color:#F61515;" href="#">REPORT</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
