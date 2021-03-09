@@ -40,8 +40,9 @@
 
     <div class="row row-cols-1 row-cols-m-2 p-2" ng-controller="BrowsePageController as browsePage">
         <div class="col-2">
-            <button class="btn text-light mx-auto" type="button" data-bs-toggle="collapse" data-bs-target="#collapsableForm"
-                aria-expanded="false" aria-controls="collapsableForm" style="background-color:#1A5AAC; width: 90%; height:auto">
+            <button class="btn text-light mx-auto" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapsableForm" aria-expanded="false" aria-controls="collapsableForm"
+                style="background-color:#1A5AAC; width: 90%; height:auto">
                 Post Your Object
             </button>
             <div class="collapse" id="collapsableForm">
@@ -52,7 +53,8 @@
                     </div>
                     <div class="mb-3">
                         <label for="PriceOfObject" class="form-label">Renting Price (In Dollars)</label>
-                        <input type="number" min="0" class="form-control" id="PriceOfObject" ng-model="browsePage.price" required>
+                        <input type="number" min="0" class="form-control" id="PriceOfObject" ng-model="browsePage.price"
+                            required>
                     </div>
                     <label for="SelectTimePeriod" class="form-label">Select Time Period</label>
                     <select class="form-select mb-3" id="SelectTimePeriod" ng-model="browsePage.timePeriod" required>
@@ -64,11 +66,17 @@
                     </select>
                     <div class="mb-3">
                         <label for="PriceOfObject" class="form-label">Total Price (In Dollars)</label>
-                        <input type="number" min="0" class="form-control" id="PriceOfObject" ng-model="browsePage.totalPrice" required>
+                        <input type="number" min="0" class="form-control" id="PriceOfObject"
+                            ng-model="browsePage.totalPrice" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="AgeOfObject" class="form-label">Age of Object</label>
+                        <input class="form-control" id="AgeOfObject" ng-model="browsePage.age" required>
                     </div>
                     <div class="mb-3">
                         <label for="ProductDescription" class="form-label">Describe the Object (Briefly)</label>
-                        <textarea type="form-control" id="ProductDescription" ng-model="browsePage.description" style="width: 100%; resize: vertical;" required></textarea>
+                        <textarea type="form-control" id="ProductDescription" ng-model="browsePage.description"
+                            style="width: 100%; resize: vertical;" required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
@@ -83,10 +91,19 @@
                         <p class="card-text">Price: {{object.Price}}</p>
                         <p class="card-text">Total Price: {{object.TotalPrice}}</p>
                         <p class="card-text">{{browsePage.availableOrNot(object.Status)}}</p>
-                        <div class="btn-group">
-                            <a class="btn btn-sm p-10 text-light" style="background-color:#1A5AAC;"
+                        <div class="collapse" id="moreInfo_{{object.id}}">
+                            <p class="card-text">Age: {{object.Age}}</p>
+                            <p class="card-text">Description: <br> {{object.Description}}</p>
+                        </div>
+                        <div class="btn-group mx-2">
+                            <a class="btn p-3 text-light" style="background-color:#1A5AAC;"
                                 href="./EnlargedCard1.html">RENT</a>
-                            <a class="btn btn-sm p-10 text-light" style="background-color:#F61515;" href="#">REPORT</a>
+                            <button class="btn text-light" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#moreInfo_{{object.id}}" aria-expanded="false" aria-controls="moreInfo"
+                                style="background-color:#1A5AAC;">
+                                More Info
+                            </button>
+                            <a class="btn p-3 text-light" style="background-color:#F61515;" href="#">REPORT</a>
                         </div>
                     </div>
                 </div>
